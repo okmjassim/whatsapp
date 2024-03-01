@@ -10,7 +10,7 @@ Jobs:
       - uses: actions/checkout@v3  # Checks out the code from the repository
       - uses: SanKirkland/FTP-Deploy-Action@v4.3.4  # Uses the FTP-Deploy-Action to deploy the code
         with:
-          server: ftp.github.com/okmjassim/whatsapp.git.com  # The hostname of the FTP server
+          server: ftp.okmjassim.github.io/whatsapp/  # The hostname of the FTP server
           username: ${{ secrets.FTPUSER }}  # The username for the FTP account
           password: ${{ secrets.FTPPASSWORD }}  # The password for the FTP account
           protocol: ftps  # The FTP protocol to use (ftps for secure FTP)
