@@ -1,0 +1,16 @@
+name: on: push  # The workflow is triggered by a push event to the repository
+
+Jobs:
+  web-deploy:  # The name of the job
+
+    name: Deploy  # The display name of the job
+    runs-on: ubuntu-latest  # The job runs on an Ubuntu virtual machine
+
+    steps:
+      - uses: actions/checkout@v3  # Checks out the code from the repository
+      - uses: SanKirkland/FTP-Deploy-Action@v4.3.4  # Uses the FTP-Deploy-Action to deploy the code
+        with:
+          server: ftp.github.com/okmjassim/whatsapp.git.com  # The hostname of the FTP server
+          username: ${{ secrets.FTPUSER }}  # The username for the FTP account
+          password: ${{ secrets.FTPPASSWORD }}  # The password for the FTP account
+          protocol: ftps  # The FTP protocol to use (ftps for secure FTP)
